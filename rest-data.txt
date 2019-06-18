@@ -1,0 +1,271 @@
+{
+    "header": {
+        "fields": [
+            {
+                "dataType": "string", 
+                "property": "vdevice-name"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "vdevice-host-name"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "address-family"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "vpn-id"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "prefix"
+            }, 
+            {
+                "dataType": "ipv4", 
+                "property": "from-peer"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "path-id"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "label"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "status"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "attribute-type"
+            }, 
+            {
+                "dataType": "ipv4", 
+                "property": "ip"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "color"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "encap"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "protocol"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "metric"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "site-id"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "as-path"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "overlay-id"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "tag"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "preference"
+            }, 
+            {
+                "dataType": "string", 
+                "property": "originator"
+            }, 
+            {
+                "dataType": "date", 
+                "property": "lastupdated"
+            }
+        ], 
+        "viewKeys": {
+            "preferenceKey": "grid-OMPReceivedRoute", 
+            "uniqueKey": [
+                "vdevice-dataKey"
+            ]
+        }, 
+        "columns": [
+            {
+                "dataType": "string", 
+                "width": 150, 
+                "property": "address-family", 
+                "title": "Address Family"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "vpn-id", 
+                "title": "VPN ID"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "prefix", 
+                "title": "Prefix"
+            }, 
+            {
+                "dataType": "ipv4", 
+                "width": 100, 
+                "property": "from-peer", 
+                "title": "From Peer"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "path-id", 
+                "title": "Path Id"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "label", 
+                "title": "Label"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "status", 
+                "title": "Status"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 150, 
+                "property": "attribute-type", 
+                "title": "Attribute Type"
+            }, 
+            {
+                "dataType": "ipv4", 
+                "width": 200, 
+                "property": "ip", 
+                "title": "Tloc IP"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "color", 
+                "title": "Tloc Color"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "encap", 
+                "title": "Tloc Encap"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "protocol", 
+                "title": "Protocol"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "metric", 
+                "title": "Metric"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "site-id", 
+                "title": "Site ID"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "as-path", 
+                "title": "AS Path"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "overlay-id", 
+                "title": "Overlay Id"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "tag", 
+                "title": "OMP Tag"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "preference", 
+                "title": "OMP Preference"
+            }, 
+            {
+                "dataType": "string", 
+                "width": 100, 
+                "property": "originator", 
+                "title": "Originator"
+            }, 
+            {
+                "hideable": false, 
+                "inputFormat": "unix-time", 
+                "title": "Last Updated", 
+                "dataType": "date", 
+                "minWidth": 100, 
+                "displayFormat": "DD MMM YYYY h:mm:ss A z", 
+                "property": "lastupdated"
+            }
+        ], 
+        "generatedOn": 1560879216289
+    }, 
+    "data": [
+        {
+            "originator": "169.254.1.90", 
+            "status": "C R", 
+            "site-id": "10", 
+            "address-family": "ipv4", 
+            "overlay-id": "1", 
+            "path-id": "66", 
+            "color": "mpls", 
+            "ip": "169.254.1.90", 
+            "metric": "0", 
+            "lastupdated": 1560879216265, 
+            "label": "1003", 
+            "vpn-id": "1", 
+            "vdevice-dataKey": "169.254.10.24-ipv4-1", 
+            "prefix": "192.168.1.0/24", 
+            "from-peer": "169.254.1.90", 
+            "encap": "ipsec", 
+            "vdevice-host-name": "BOGvSmart", 
+            "protocol": "connected", 
+            "attribute-type": "installed", 
+            "vdevice-name": "169.254.10.24"
+        }, 
+        {
+            "originator": "169.254.1.91", 
+            "status": "C R", 
+            "site-id": "20", 
+            "overlay-id": "1", 
+            "path-id": "66", 
+            "color": "mpls", 
+            "ip": "169.254.1.91", 
+            "metric": "0", 
+            "lastupdated": 1560879216265, 
+            "label": "1003", 
+            "vpn-id": "1", 
+            "vdevice-dataKey": "169.254.10.24--1", 
+            "prefix": "192.168.2.0/24", 
+            "from-peer": "169.254.1.91", 
+            "encap": "ipsec", 
+            "vdevice-host-name": "BOGvSmart", 
+            "protocol": "connected", 
+            "attribute-type": "installed", 
+            "vdevice-name": "169.254.10.24"
+        }
+    ]
+}
