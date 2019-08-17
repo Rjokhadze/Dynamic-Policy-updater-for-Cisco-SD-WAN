@@ -241,7 +241,7 @@
             "prefix": "192.168.1.0/24", 
             "from-peer": "169.254.1.90", 
             "encap": "ipsec", 
-            "vdevice-host-name": "BOGvSmart", 
+            "vdevice-host-name": "vSmart", 
             "protocol": "connected", 
             "attribute-type": "installed", 
             "vdevice-name": "169.254.10.24"
@@ -262,7 +262,7 @@
             "prefix": "192.168.2.0/24", 
             "from-peer": "169.254.1.91", 
             "encap": "ipsec", 
-            "vdevice-host-name": "BOGvSmart", 
+            "vdevice-host-name": "vSmart", 
             "protocol": "connected", 
             "attribute-type": "installed", 
             "vdevice-name": "169.254.10.24"
