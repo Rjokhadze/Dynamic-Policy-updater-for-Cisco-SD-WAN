@@ -7,14 +7,14 @@ import time
 #Activate Temporary Policy to make changes in
 
 headers = {'Content-Type': 'application/json'}
-p = req.post("https://bog.ol.ge:8443/dataservice/template/policy/vsmart/activate/75a4db9f-43e8-4cc2-b213-dedb0972f9da",
-                   auth=('api', 'asdASD123'), json={"isEdited": "true"}, verify=False, headers=headers)
+p = req.post("https://url/dataservice/template/policy/vsmart/activate/75a4db9f-43e8-4cc2-b213-dedb0972f9da",
+                   auth=('username', 'password'), json={"isEdited": "true"}, verify=False, headers=headers)
 print p.content
 
 time.sleep(15)
 
-response = req.get("https://bog.ol.ge:8443/dataservice/device/omp/routes/received?deviceId=169.254.10.24",
-                   auth=('api', 'asdASD123'), verify=False)
+response = req.get("https://url:8443/dataservice/device/omp/routes/received?deviceId=169.254.10.24",
+                   auth=('username', 'password'), verify=False)
 # print (data)
 with open('rest-data.txt', 'w') as f:
     json.dump(response.json(), f, indent=4)
@@ -38,11 +38,11 @@ with open('prefixes.json', 'w') as f:
     json.dump(json_dict, f, indent=4)
 
 headers = {'Content-Type' : 'application/json'}
-p = req.put("https://bog.ol.ge:8443/dataservice/template/policy/list/dataprefix/1f65368e-d879-4355-9d3e-cc83ca3bbf1f",
-                   auth=('api', 'asdASD123'), data=open('prefixes.json', 'rb'), verify=False, headers=headers)
+p = req.put("https://url:8443/dataservice/template/policy/list/dataprefix/1f65368e-d879-4355-9d3e-cc83ca3bbf1f",
+                   auth=('username', 'password'), data=open('prefixes.json', 'rb'), verify=False, headers=headers)
 
 #Activate Data Policy after updating prefix-list
 headers = {'Content-Type' : 'application/json'}
-p = req.post("https://bog.ol.ge:8443/dataservice/template/policy/vsmart/activate/35d0a1e9-0133-49c7-ab34-fa30f7993343",
-                   auth=('api', 'asdASD123'), data=open('activate_policy.json', 'rb'), verify=False, headers=headers)
+p = req.post("https://url:8443/dataservice/template/policy/vsmart/activate/35d0a1e9-0133-49c7-ab34-fa30f7993343",
+                   auth=('username', 'password'), data=open('activate_policy.json', 'rb'), verify=False, headers=headers)
 
