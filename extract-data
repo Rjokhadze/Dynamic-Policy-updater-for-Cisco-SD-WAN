@@ -7,7 +7,7 @@ import time
 #Activate Temporary Policy to make changes in
 
 headers = {'Content-Type': 'application/json'}
-p = req.post("https://url/dataservice/template/policy/vsmart/activate/75a4db9f-43e8-4cc2-b213-dedb0972f9da",
+p = req.post("https://url:8443/dataservice/template/policy/vsmart/activate/75a4db9f-43e8-4cc2-b213-dedb0972f9da",
                    auth=('username', 'password'), json={"isEdited": "true"}, verify=False, headers=headers)
 print p.content
 
