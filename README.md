@@ -1,4 +1,4 @@
-[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/sdwan-policy-automation)
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/Rjokhadze/Dynamic-Policy-updater-for-Cisco-SD-WAN)
 
 # Cisco SD-WAN Policy automation with REST API
 
