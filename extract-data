@@ -1,48 +1,40 @@
 import requests as req
 import json
-import simplejson
-import time
+headers = {'Content-Type' : 'application/json'}
 
+s = req.Session()
+s = req.get("https://{vmanage_host}/dataservice/device/omp/routes/received?deviceId={vsmart-RID}",
+auth=('username', 'password'), verify=False)
 
-#Activate Temporary Policy to make changes in
-
-headers = {'Content-Type': 'application/json'}
-p = req.post("https://url:8443/dataservice/template/policy/vsmart/activate/75a4db9f-43e8-4cc2-b213-dedb0972f9da",
-                   auth=('username', 'password'), json={"isEdited": "true"}, verify=False, headers=headers)
-print p.content
-
-time.sleep(15)
-
-response = req.get("https://url:8443/dataservice/device/omp/routes/received?deviceId=169.254.10.24",
-                   auth=('username', 'password'), verify=False)
-# print (data)
 with open('rest-data.txt', 'w') as f:
-    json.dump(response.json(), f, indent=4)
+    json.dump(s.json(), f, indent=4)
 
-# print (dict[0]['prefix'])   # < --- print every index somehow!
 
 prefixes = []
 
 with open('rest-data.txt', 'r') as data_file:
     data = json.load(data_file)
     for d in data['data']:
-        if int(d['site-id']) >= 10 and int(d['site-id']) < 99:  # Range of Site-ID
+        if int(d['site-id']) >= 201 and int(d['site-id']) <= 202:  # Range of Site-ID
             prefixes.append(d['prefix'])
 
 json_dict = {
-    "name": "asd",  # Name of the Data Prefix-list
+    "name": "BLOCK_INTER_SPOKE",  # Name of the Data Prefix-list
+    "description": "",
+    "type": "dataPrefix",
+    "listId": "{datalistID}",
     "entries": [{'ipPrefix': prefixes} for prefixes in prefixes]
 }
-
 with open('prefixes.json', 'w') as f:
     json.dump(json_dict, f, indent=4)
 
-headers = {'Content-Type' : 'application/json'}
-p = req.put("https://url:8443/dataservice/template/policy/list/dataprefix/1f65368e-d879-4355-9d3e-cc83ca3bbf1f",
-                   auth=('username', 'password'), data=open('prefixes.json', 'rb'), verify=False, headers=headers)
+# Update Prefix List
+r = req.put("https://{vmanage_host}/dataservice/template/policy/list/dataprefix/{datalistID}",
+auth=('username', 'password'), data=open('prefixes.json', 'r'), verify=False, headers=headers, cookies=s.cookies)
 
 #Activate Data Policy after updating prefix-list
-headers = {'Content-Type' : 'application/json'}
-p = req.post("https://url:8443/dataservice/template/policy/vsmart/activate/35d0a1e9-0133-49c7-ab34-fa30f7993343",
-                   auth=('username', 'password'), data=open('activate_policy.json', 'rb'), verify=False, headers=headers)
+r = req.post("https://{vmanage_host}/dataservice/template/policy/vsmart/activate/{PolicyID}",auth=('username', 'password'), data=open('activate_policy.json', 'r'), verify=False, headers=headers, cookies=s.cookies)
 
+
+#Attach Template
+r = req.post("https://{vmanage_host}/dataservice/template/device/config/attachcli",auth=('username', 'password'), data=open('tempcli.json', 'r'), verify=False, headers=headers, cookies=s.cookies)
